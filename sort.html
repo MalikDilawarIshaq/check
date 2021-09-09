@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label>Enter number:</label><input type="number" name="number" id="first-num">
+<button onclick="MyFunction()">Add</button>
+
+  <script>
+   var array=[]
+  function MyFunction(){
+  	
+	var a = parseInt(document.getElementById("first-num").value);
+	array.push(a);
+	console.log("length:"+ array.length );
+	if(array.length==4){
+		
+		sort(array);
+	}
+	             }
+	             function sort(a){
+	             	console.log("ok");
+	             	for (var i=0; i<=3; i++) {
+	            		console.log(a[i]);
+                         }
+
+	             		for (var i = 0; i<=a.length-1; i++){
+	             		    for (var j=i; j>0; j--){
+	             		    	
+	             		    	if ( a[j] < a[j-1] ){
+                                  var temp;
+                                  temp = a[j] ;
+                                  a[j] = a[j-1];
+                                  a[j-1] = temp;
+	             		    	}
+	             		    }
+	             		}
+	             		       for (var i=0; i<=3; i++) {
+	            		document.write(a[i]+" ");
+                         }
+	             }
+
+</script>
+
+</body>
+</html>

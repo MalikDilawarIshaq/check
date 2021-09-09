@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="result"/>
+<input type="button" value="+" onclick="display('+')"/>
+<input type="button" value="-" onclick="display('-')"/>
+<input type="button" value="*" onclick="display('*')"/>
+<input type="button" value="/" onclick="display('/')"/>
+<input type="button" value="c" onclick="clr()"/>
+<input type="button" value="=" onclick="calculate()"/>
+
+
+  <script>
+  
+    function display(val)
+         {
+             document.getElementById("result").value+=val
+         }
+           
+         //function that evaluates the digit and return result
+         function calculate()
+         {
+             let x = document.getElementById("result").value;
+             let y = eval(x);
+             document.getElementById("result").value = y;
+         }
+           
+         //function that clear the display
+        function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+	
+	             
+	             
+
+</script>
+
+</body>
+</html>

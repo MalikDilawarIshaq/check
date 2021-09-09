@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<label>Enter number:</label><input type="number" name="number" id="first-num">
+<button onclick="MyFunction()">Add</button>
+<button onclick="find()">FIND</button>
+
+  <script>
+   var array=[];
+   var check=[];
+   var check1=[];
+   var count=0;
+   var count1=0;
+  function MyFunction(){
+  	
+	var a = parseInt(document.getElementById("first-num").value);
+	array.push(a);
+	console.log("length"+"="+array.length);
+	
+	             }
+	             function find(){
+	             	// console.log("ok");
+	             	// for (var i=0; i<=3; i++) {
+	            	// 	console.log(a[i]);
+                    //      }
+
+	             		for (var i = 0; i<=array.length-1; i++){
+	             		    for (var j = 0; j<=array.length-1; j++){
+	             		    	
+	             		    	if ( array[i] == array[j] ){
+                                  
+                                  count++;
+                                  
+	             		    	}
+	             		    }
+                            //  if ( count == 1 ){
+                            //      document.write(a[i]+"="+count+"Time");
+                            //      document.write("<br>");
+                            //  }
+                            // else if ( count == 2 ){
+                            //      document.write(a[i]+"="+count+"Time");
+                            //      document.write("<br>");
+                            //  }
+                            //  else if( count == 3 ){
+                            //      document.write(a[i]+"="+count+"Time");
+                            //      document.write("<br>");
+                            //  }
+                            //  else if( count == 4 ){
+                            //      document.write(a[i]+"="+count+"Time");
+                            //      document.write("<br>");
+                            //  }
+                          
+                            for (var k = 0; k<=check.length-1; k++){
+                                
+                                
+                                if( array[i] == check[k] ){
+                                    count1++;
+                                    
+                                }
+                            }
+                        
+                            if(count1==0){
+                                check.push(array[i]);
+                                check1.push(array[i]+"="+count+"time");
+                                
+                            }
+                              count=0;
+                              count1=0;
+	             		 }
+	             		      for (var m = 0; m<=check1.length-1; m++){
+                               document.write(check1[m]);
+                               document.write("<br>");
+                               
+                              }    
+	             }
+
+</script>
+
+</body>
+</html>

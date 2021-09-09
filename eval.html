@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<input type="text" id="result"/>
+<input type="button" value="+" onclick="display('+')"/>
+<input type="button" value="-" onclick="display('-')"/>
+<input type="button" value="*" onclick="display('*')"/>
+<input type="button" value="/" onclick="display('/')"/>
+<input type="button" value="c" onclick="clr()"/>
+<input type="button" value="=" onclick="calculate()"/>
+
+
+  <script>
+       var opt="";
+       var b="";
+       var c="";
+    function display(val)
+         {
+             document.getElementById("result").value+=val
+         }
+           
+         //function that evaluates the digit and return result
+         function calculate()
+         {
+             let x = document.getElementById("result").value;
+             let y = customized(x);
+             document.getElementById("result").value = y;
+         }
+           
+         //function that clear the display
+        function clr()
+         {
+             document.getElementById("result").value = ""
+         }
+
+         function customized(a){
+         	 b = a[0];
+         	
+         	
+         	if(a[1]!='+'&&a[1]!='-'&&a[1]!='*'&&a[1]!='/'&&a[1]){
+                  b += a[1];
+                  
+         	} 
+
+         	 if(a[1]=='+'||a[1]=='-'||a[1]=='*'||a[1]=='/'&&!opt&&a[1]){
+         		opt = a[1];
+         		
+         		}
+
+            if(a[2]!='+'&&a[2]!='-'&&a[2]!='*'&& a[2]!='/'&&!opt&&a[2]){
+                  b += a[2];
+                  
+                  }
+         	
+         	 if(a[2]=='+'||a[2]=='-'||a[2]=='*'||a[2]=='/'&&!opt&&a[2]) {
+         		opt = a[2];
+         		
+         		
+         	}
+         	
+         	 if(a[2]!='+'&& a[2]!='-'&&a[2]!='*'&&a[2]!='/'&&opt&&a[2]){
+               c=a[2];
+               
+         	 }
+
+         	 if(a[3]!='+'&& a[3]!='-' && a[3]!='*'&& a[3]!='/'&&!opt&&a[3]){
+                  b += a[3];
+                                  
+         	}
+         	
+         	 if(a[3]=='+'|| a[3]=='-' || a[3]=='*'|| a[3]=='/'&&!opt&&a[3]) {
+         		opt = a[3];
+         		
+         		
+         	}
+         	
+         if(a[3]!='+'&&a[3]!='-'&&a[3]!='*'&&a[3]!='/'&&opt&&a[3]){
+               c += a[3];
+               
+         	 }
+
+         	 if(a[4]=='+'|| a[4]=='-' || a[4]=='*'|| a[4]=='/'&&!opt&&a[4]) {
+         		opt = a[4];
+         		
+         		
+         	}
+         	
+         	if(a[4]!='+'&& a[4]!='-' && a[4]!='*'&& a[4]!='/' && opt&&a[4]){
+               c += a[4];
+               
+         	 }
+         	
+         	 if(a[5] && b&& opt){
+         	 	c += a[5];
+         	 	
+         	 }
+         	
+         	 if(a[6]  && b&& opt){
+         	 	c += a[6];
+         	 	
+         	 }
+         	
+         	
+         	 if(a[7]  && b&& opt){
+         	 	c += a[7];
+         	 	
+         	 }
+         	
+         	 if(a[8]  && b&& opt){
+         	 	c += a[8];
+         	 	
+         	 }
+
+
+         	
+            console.log("First value:"+b);
+            console.log("Operator:"+opt);
+            console.log("Second value:"+c);
+
+            b = parseInt(b);
+            c = parseInt(c);
+
+            if(opt=="+"){
+
+            	console.log(b+c);
+            	return(b+c);
+            }
+            else if(opt=="-"){
+            	console.log(b-c);
+            	return(b-c);
+            }
+            else if(opt=="*"){
+            	console.log(b*c);
+            	return(b*c);
+            }
+            else{
+            	console.log(b/c);
+            	return(b/c);
+            }
+
+
+
+
+
+
+         }
+	
+	             
+	             
+
+</script>
+
+</body>
+</html>
